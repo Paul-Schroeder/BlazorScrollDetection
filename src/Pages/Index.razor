@@ -1,0 +1,17 @@
+﻿@page "/"
+@inherits IndexViewModel
+@implements IDisposable
+
+<p>
+    <label>
+        Scroll Tracking is : @IsScrollTrackingEnabled
+    </label>
+</p>
+
+<p>
+    <button @onclick="ToggleDotNetTrackScroll">
+        Toggle scroll tracking on or off
+    </button>
+</p>
+
+<div style="height: 4000px">Scroll down!</div>
