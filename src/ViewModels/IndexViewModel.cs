@@ -19,16 +19,16 @@ namespace BlazorScrollDetection.ViewModels
         }
 
         [JSInvokable]
-        public bool IsAtWindowBottom(int windowScrollTop, int windowHeight, int documentHeight)
+        public bool IsAtWindowBottom(double contentScrollTop, double contentHeight, double containerHeight)
         {
-            bool retVal = (windowScrollTop + windowHeight) == (documentHeight);
+            bool retVal = (contentScrollTop + contentHeight) >= containerHeight;
             return retVal;
         }
 
         [JSInvokable]
-        public bool IsNearWindowBottom(int windowScrollTop, int windowHeight, int documentHeight)
+        public bool IsNearWindowBottom(double contentScrollTop, double contentHeight, double containerHeight)
         {
-            bool retVal = (windowScrollTop + windowHeight) > (documentHeight - 100);
+            bool retVal = (contentScrollTop + contentHeight) > (containerHeight - 100);
             return retVal;
         }
 
